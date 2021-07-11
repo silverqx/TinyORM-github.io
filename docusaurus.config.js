@@ -5,13 +5,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 module.exports = {
   title: 'TinyORM',
   tagline: 'c++ ORM library for Qt framework',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://silverqx.github.io',
+  baseUrl: '/TinyORM/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'silverqx', // Usually your GitHub org/user name.
   projectName: 'TinyORM', // Usually your repo name.
+  trailingSlash: false,
+  titleDelimiter: '-',
   themeConfig: {
     hideableSidebar: true,
     navbar: {
