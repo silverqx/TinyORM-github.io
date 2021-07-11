@@ -16,6 +16,9 @@ module.exports = {
   titleDelimiter: '-',
   themeConfig: {
     hideableSidebar: true,
+    colorMode: {
+      defaultMode: 'dark',
+    },
     navbar: {
       hideOnScroll: true,
       title: 'TinyORM',
@@ -38,7 +41,6 @@ module.exports = {
       ],
     },
     footer: {
-      style: 'dark',
       links: [],
       copyright: `Copyright © ${new Date().getFullYear()} <a href="https://github.com/silverqx" target="_blank">Silver Zachara</a>`,
     },

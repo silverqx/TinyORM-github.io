@@ -21,6 +21,7 @@
     /* --ifm-code-font-size: 85%; */
     --ifm-pre-line-height: var(--ifm-line-height-base);
     --doc-sidebar-width: 230px !important;
+    --ifm-footer-padding-vertical: calc(var(--ifm-spacing-vertical) * 1.4);
 }
 
 /* Headings
