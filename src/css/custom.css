@@ -63,7 +63,6 @@ article header + ul li li a {
 
 article header + ul li a:before {
     content: "# ";
-    /* color: #c08c7f; */
     color: var(--ifm-color-info-darker);
     font-size: 90%;
 }
@@ -74,7 +73,6 @@ article header + ul li li a:before {
 
 .hash-link:link,
 .hash-link:visited {
-    /* color: #c08c7f; */
     color: var(--ifm-color-info-darker);
 }
 
@@ -91,6 +89,6 @@ article header + ul li li a:before {
     transition: top 0.2s ease 0s;
 }
 
-.navbarHidden_node_modules-\@docusaurus-theme-classic-lib-next-theme-Navbar-styles-module~.main-wrapper .tableOfContents_node_modules-\@docusaurus-theme-classic-lib-next-theme-TOC-styles-module {
+.navbarHidden_node_modules-\@docusaurus-theme-classic-lib-next-theme-Navbar-styles-module ~ .main-wrapper .tableOfContents_node_modules-\@docusaurus-theme-classic-lib-next-theme-TOC-styles-module {
     top: 1rem;
 }
