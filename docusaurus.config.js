@@ -49,6 +49,19 @@ module.exports = {
       darkTheme: darkCodeTheme,
       defaultLanguage: 'cpp',
     },
+    gtag: {
+      // You can also use your "G-" Measurement ID here.
+      trackingID: 'G-76EJD5P91M',
+      // Optional fields.
+      anonymizeIP: false, // Should IPs be anonymized?
+    },
+    algolia: {
+      apiKey: '2d548632681c7f359587e5671f67e636',
+      indexName: 'TinyORM-github.io',
+      contextualSearch: false,
+      // Optional: Algolia search parameters
+      searchParameters: {},
+    },
   },
   presets: [
     [
