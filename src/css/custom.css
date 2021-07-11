@@ -1,0 +1,96 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+
+/* You can override the default Infima variables here. */
+
+:root {
+    --ifm-color-primary: #25c2a0;
+    --ifm-color-primary-dark: rgb(33, 175, 144);
+    --ifm-color-primary-darker: rgb(31, 165, 136);
+    --ifm-color-primary-darkest: rgb(26, 136, 112);
+    --ifm-color-primary-light: rgb(70, 203, 174);
+    --ifm-color-primary-lighter: rgb(102, 212, 189);
+    --ifm-color-primary-lightest: rgb(146, 224, 208);
+    /* --ifm-font-size-base: 95%; */
+    /* --ifm-code-font-size: 85%; */
+    --ifm-pre-line-height: var(--ifm-line-height-base);
+    --doc-sidebar-width: 230px !important;
+}
+
+.docusaurus-highlight-code-line {
+    background-color: rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 calc(-1 * var(--ifm-pre-padding));
+    padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    --ifm-h1-font-size: 2.1rem;
+    font-size: var(--ifm-h1-font-size) !important;
+}
+
+.markdown > h2 {
+    --ifm-h2-font-size: 1.8rem;
+}
+
+.menu__link {
+    font-size: 0.9rem;
+}
+
+article header + ul,
+article header + ul ul {
+    list-style-type: none;
+}
+
+article header + ul li a {
+    font-weight: bold;
+}
+
+article header + ul li li a {
+    font-weight: normal;
+}
+
+article header + ul li a:before {
+    content: "# ";
+    /* color: #c08c7f; */
+    color: var(--ifm-color-info-darker);
+    font-size: 90%;
+}
+
+article header + ul li li a:before {
+    font-size: 80%;
+}
+
+.hash-link:link,
+.hash-link:visited {
+    /* color: #c08c7f; */
+    color: var(--ifm-color-info-darker);
+}
+
+.hash-link:hover,
+.hash-link:active {
+    text-decoration: none;
+}
+
+.table-of-contents {
+    font-size: 0.7rem;
+}
+
+.tableOfContents_node_modules-\@docusaurus-theme-classic-lib-next-theme-TOC-styles-module {
+    transition: top 0.2s ease 0s;
+}
+
+.navbarHidden_node_modules-\@docusaurus-theme-classic-lib-next-theme-Navbar-styles-module~.main-wrapper .tableOfContents_node_modules-\@docusaurus-theme-classic-lib-next-theme-TOC-styles-module {
+    top: 1rem;
+}
