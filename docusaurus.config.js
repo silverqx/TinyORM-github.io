@@ -17,12 +17,12 @@ module.exports = {
   themeConfig: {
     hideableSidebar: true,
     navbar: {
+      hideOnScroll: true,
       title: 'TinyORM',
       logo: {
         alt: 'TinyORM Logo',
         src: 'img/logo.svg',
       },
-      hideOnScroll: true,
       items: [
         // {
         //   type: 'doc',
