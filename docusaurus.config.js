@@ -78,6 +78,9 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        sitemap: {
+          changefreq: 'daily',
+        },
       },
     ],
   ],
@@ -104,13 +107,5 @@ module.exports = {
         }
       };
     },
-    [
-      '@docusaurus/plugin-sitemap',
-      {
-        changefreq: 'daily',
-        priority: 0.5,
-        trailingSlash: false,
-      },
-    ],
   ],
 };
