@@ -1,5 +1,6 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const CopyPlugin = require('copy-webpack-plugin');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -92,6 +93,13 @@ module.exports = {
             resolve: {
               symlinks: false,
             },
+            plugins: [
+              new CopyPlugin({
+                patterns: [
+                  { from: 'src/robots.txt', to: 'robots.txt' },
+                ],
+              }),
+            ],
           };
         }
       };
