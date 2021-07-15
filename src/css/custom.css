@@ -54,7 +54,7 @@ h1 {
 }
 
 /* Article content navigation */
-.article header + ul,
+article header + ul,
 article header + ul ul {
     list-style-type: none;
 }
