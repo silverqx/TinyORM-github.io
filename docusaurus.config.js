@@ -57,9 +57,8 @@ module.exports = {
       anonymizeIP: false, // Should IPs be anonymized?
     },
     algolia: {
-      appId: 'ML6TJ6GTSR',
-      apiKey: '2d548632681c7f359587e5671f67e636',
-      indexName: 'TinyORM-github.io',
+      apiKey: 'ea31caf4b808d9c6ac5697c16d513e3b',
+      indexName: 'tinyorm',
       contextualSearch: false,
       // Optional: Algolia search parameters
       // searchParameters: {},
