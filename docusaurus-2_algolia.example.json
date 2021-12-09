@@ -1,10 +1,10 @@
 {
   "index_name": "",
   "start_urls": [
-    "https://silverqx.github.io/TinyORM/"
+    "https://www.tinyorm.org"
   ],
   "sitemap_urls": [
-    "https://silverqx.github.io/TinyORM/sitemap.xml"
+    "https://www.tinyorm.org/sitemap.xml"
   ],
   "sitemap_alternate_links": true,
   "stop_urls": [],

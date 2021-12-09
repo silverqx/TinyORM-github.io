@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://silverqx.github.io/TinyORM/sitemap.xml
+Sitemap: https://www.tinyorm.org/sitemap.xml

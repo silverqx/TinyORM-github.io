@@ -6,15 +6,17 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   title: 'TinyORM',
   tagline: 'c++ ORM library for Qt framework',
-  url: 'https://silverqx.github.io',
-  baseUrl: '/TinyORM/',
+  url: 'https://www.tinyorm.org',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'silverqx', // Usually your GitHub org/user name.
   projectName: 'TinyORM', // Usually your repo name.
+  // deploymentBranch: 'gh-pages',
   trailingSlash: false,
   titleDelimiter: '-',
+  noIndex: false,
   themeConfig: {
     hideableSidebar: true,
     colorMode: {
