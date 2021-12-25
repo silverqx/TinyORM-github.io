@@ -75,7 +75,7 @@ module.exports = {
         },
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.scss'),
+          customCss: [require.resolve('./src/css/custom.scss')],
         },
         sitemap: {
           changefreq: 'daily',

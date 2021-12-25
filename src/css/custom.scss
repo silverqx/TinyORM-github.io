@@ -23,6 +23,10 @@
     --ifm-footer-padding-vertical: calc(var(--ifm-spacing-vertical) * 1.4);
 }
 
+html[data-theme='dark'] {
+    --ifm-code-background: #2d2e31;
+}
+
 /* Headings
  ---------------------------*/
 h1 {
@@ -87,8 +91,22 @@ article {
     padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
-    background-color: rgba(0, 0, 0, 0.3);
+html[data-theme='dark'] {
+    .docusaurus-highlight-code-line {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .prism-code {
+        background-color: #20222b !important;
+    }
+}
+
+/* Prism syntax highlighting
+ ---------------------------*/
+.prism-code {
+    .token {
+        font-style: inherit !important;
+    }
 }
 
 /* Table of Contents
@@ -126,12 +144,4 @@ nav[class*='navbarHidden_']
  ---------------------------*/
 .tiny-tree {
     position: relative;
-}
-
-/* Prism syntax highlighting
- ---------------------------*/
-.prism-code {
-    .token {
-        font-style: inherit !important;
-    }
 }
