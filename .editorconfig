@@ -11,5 +11,14 @@ trim_trailing_whitespace = false
 [*.{md,mdx}]
 trim_trailing_whitespace = false
 
-[*.{js,json,ts}]
+[*.{js,ts}]
+indent_size = 4
+
+[*.{css,scss}]
+indent_size = 4
+
+[*.{json}]
+indent_size = 2
+
+[{babel.config.js,docusaurus.config.js}]
 indent_size = 2

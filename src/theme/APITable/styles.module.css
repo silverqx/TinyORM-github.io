@@ -1,0 +1,18 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.apiTable tbody tr {
+    transition: box-shadow 0.2s;
+}
+
+.apiTable tbody tr:focus,
+.apiTable tbody tr:hover {
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 0 4.5px 0 inset var(--ifm-color-warning);
+    transition: box-shadow 0.1s;
+}

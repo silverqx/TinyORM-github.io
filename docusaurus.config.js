@@ -13,7 +13,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'silverqx', // Usually your GitHub org/user name.
   projectName: 'TinyORM', // Usually your repo name.
-  // deploymentBranch: 'gh-pages',
+  deploymentBranch: 'gh-pages',
   trailingSlash: false,
   titleDelimiter: '-',
   noIndex: false,
@@ -30,12 +30,6 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
-        // {
-        //   type: 'doc',
-        //   docId: 'intro',
-        //   position: 'left',
-        //   label: 'Tutorial',
-        // },
         {
           href: 'https://github.com/silverqx/TinyORM',
           label: 'GitHub',
@@ -45,12 +39,15 @@ module.exports = {
     },
     footer: {
       links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} <a href="https://github.com/silverqx" target="_blank">Silver Zachara</a>`,
+      copyright:
+        `<span>Copyright © ${new Date().getFullYear()} </span>` +
+        `<a href="https://github.com/silverqx" target="_blank">Silver Zachara</a>`,
     },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
       defaultLanguage: 'cpp',
+      additionalLanguages: ['cmake', 'powershell'],
     },
     gtag: {
       // You can also use your "G-" Measurement ID here.
@@ -78,7 +75,7 @@ module.exports = {
         },
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
         sitemap: {
           changefreq: 'daily',
@@ -90,6 +87,9 @@ module.exports = {
   //   "https://fonts.googleapis.com/icon?family=Material+Icons",
   // ],
   plugins: [
+    // '@docusaurus/plugin-ideal-image',
+    'docusaurus-plugin-sass',
+    // webpack-configuration-plugin
     function(context, options) {
       return {
         name: 'webpack-configuration-plugin',
@@ -98,13 +98,6 @@ module.exports = {
             resolve: {
               symlinks: false,
             },
-            plugins: [
-              new CopyPlugin({
-                patterns: [
-                  { from: 'src/robots.txt', to: 'robots.txt' },
-                ],
-              }),
-            ],
           };
         }
       };

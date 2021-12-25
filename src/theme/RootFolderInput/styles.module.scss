@@ -1,0 +1,29 @@
+.rootFolderInput {
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    z-index: 10;
+
+    .input {
+        width: 16rem;
+        background-color: var(--ifm-pre-background);
+    }
+}
+
+.rootFolderInput.application {
+    top: 36px;
+    left: 45px;
+}
+
+.input {
+    font-size: calc(var(--ifm-font-size-base) / 1.1);
+    padding: 0.2rem;
+    border-color: var(--ifm-color-content-secondary);
+    border-radius: 3px;
+    border-style: solid;
+    border-width: var(--ifm-global-border-width);
+}
+
+.input.application {
+    width: 14rem;
+}

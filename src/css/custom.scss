@@ -1,6 +1,5 @@
 /* stylelint-disable docusaurus/copyright-header */
 
-
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -54,27 +53,29 @@ h1 {
 }
 
 /* Article content navigation */
-article header + ul,
-article header + ul ul {
-    list-style-type: none;
-}
+article {
+    header + ul,
+    header + ul ul {
+        list-style-type: none;
+    }
 
-article header + ul li a {
-    font-weight: bold;
-}
+    header + ul li a {
+        font-weight: bold;
+    }
 
-article header + ul li li a {
-    font-weight: normal;
-}
+    header + ul li li a {
+        font-weight: normal;
+    }
 
-article header + ul li a:before {
-    content: "# ";
-    color: var(--ifm-color-info-darker);
-    font-size: 90%;
-}
+    header + ul li a:before {
+        content: "# ";
+        color: var(--ifm-color-info-darker);
+        font-size: 90%;
+    }
 
-article header + ul li li a:before {
-    font-size: 80%;
+    header + ul li li a:before {
+        font-size: 80%;
+    }
 }
 
 /* Code
@@ -103,4 +104,34 @@ main > .container > .row > .col:last-child > div[class^='tableOfContents_'] {
 nav[class*='navbarHidden_']
 ~ .main-wrapper main > .container > .row > .col:last-child > div[class^='tableOfContents_'] {
     top: 1rem;
+}
+
+/* APITable Component
+ ---------------------------*/
+#apitable-build-options {
+    td:nth-child(-n+2) {
+        vertical-align: top;
+    }
+
+    td:nth-child(2) {
+        text-align: center;
+    }
+}
+
+#apitable-c-macros td:first-child {
+    vertical-align: top;
+}
+
+/* RootFolderInput Component inside Tabs Component
+ ---------------------------*/
+.tiny-tree {
+    position: relative;
+}
+
+/* Prism syntax highlighting
+ ---------------------------*/
+.prism-code {
+    .token {
+        font-style: inherit !important;
+    }
 }
