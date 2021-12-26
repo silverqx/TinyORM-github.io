@@ -1,6 +1,9 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const CopyPlugin = require('copy-webpack-plugin');
+const lightCodeTheme = require('prism-react-renderer/themes/github')
+const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const postcssImport = require('postcss-import')
+const postcssPresetEnv = require('postcss-preset-env')
+const postcssNested = require('postcss-nested')
+const postcssNestedAncestors = require('postcss-nested-ancestors')
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -75,7 +78,7 @@ module.exports = {
         },
         blog: false,
         theme: {
-          customCss: [require.resolve('./src/css/custom.scss')],
+          customCss: [require.resolve('./src/css/custom.css')],
         },
         sitemap: {
           changefreq: 'daily',
@@ -88,18 +91,38 @@ module.exports = {
   // ],
   plugins: [
     // '@docusaurus/plugin-ideal-image',
-    'docusaurus-plugin-sass',
-    // webpack-configuration-plugin
-    function(context, options) {
+    // 'docusaurus-plugin-sass',
+    function (/*context, options*/) {
       return {
         name: 'webpack-configuration-plugin',
-        configureWebpack(config, isServer, utils) {
+        configureWebpack(/*config, isServer, utils*/) {
           return {
             resolve: {
               symlinks: false,
             },
           };
         }
+      };
+    },
+    function (/*context, options*/) {
+      return {
+        name: 'postcss-configuration-plugin',
+        configurePostCss(/*postcssOptions*/) {
+          return {
+            plugins: [
+              postcssImport,
+              postcssNestedAncestors,
+              postcssNested,
+              postcssPresetEnv({
+                stage: 1,
+                features: {
+                  'color-mod-function': { unresolved: 'throw' },
+                  'custom-properties': false,
+                },
+              }),
+            ].filter(Boolean),
+          }
+        },
       };
     },
   ],

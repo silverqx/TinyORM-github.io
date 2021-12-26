@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import useRootFolderContext from '@theme/hooks/useRootFolderContext'
 import { folderDefaultValue, isApplicationFolder } from '@theme/utils/rootFolderUtils'
 
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 /**
  * Input element to save the Root path and Application folder.
