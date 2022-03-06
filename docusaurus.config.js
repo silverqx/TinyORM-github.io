@@ -52,12 +52,6 @@ module.exports = {
       defaultLanguage: 'cpp',
       additionalLanguages: ['cmake', 'powershell'],
     },
-    gtag: {
-      // You can also use your "G-" Measurement ID here.
-      trackingID: 'G-2QRS622BWQ',
-      // Optional fields.
-      anonymizeIP: false, // Should IPs be anonymized?
-    },
     algolia: {
       appId: 'ML6TJ6GTSR',
       apiKey: '2d548632681c7f359587e5671f67e636',
@@ -82,6 +76,12 @@ module.exports = {
         },
         sitemap: {
           changefreq: 'daily',
+        },
+        gtag: {
+          // You can also use your "G-" Measurement ID here.
+          trackingID: 'G-2QRS622BWQ',
+          // Optional fields.
+          anonymizeIP: false, // Should IPs be anonymized?
         },
       },
     ],
