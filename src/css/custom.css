@@ -54,6 +54,10 @@ h1 {
     --ifm-h2-font-size: 1.8rem;
 }
 
+.hash-link {
+    vertical-align: middle;
+}
+
 .hash-link:link,
 .hash-link:visited {
     color: var(--ifm-color-info-darker);
@@ -156,8 +160,48 @@ nav[class*='navbarHidden_']
     vertical-align: top;
 }
 
+#apitable-dropping-indexes {
+    th:last-child {
+        width: 50%;
+    }
+
+    td:first-child {
+        font-size: 90%;
+        overflow-wrap: anywhere;
+    }
+}
+
 /* RootFolderInput Component inside Tabs Component
  ---------------------------*/
 .tiny-tree {
     position: relative;
+}
+
+/* Schema builder - Available Column Types
+ ---------------------------*/
+#collection-method-list {
+    & > p {
+        column-count: 3;
+        column-gap: 2em;
+    }
+
+    @media screen and (max-width: 480px) {
+        & > p {
+            column-count: 2;
+        }
+    }
+
+    a {
+        display: block;
+    }
+}
+
+#collection-methods {
+    & > h4 {
+        margin-top: 2rem;
+    }
+
+    & > h4 > code {
+        color: var(--ifm-link-color);
+    }
 }
