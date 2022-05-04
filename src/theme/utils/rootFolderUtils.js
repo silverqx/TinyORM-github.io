@@ -21,11 +21,10 @@ export const applicationFolderPath = (groupId, uniformPath = true) => {
     if (groupId == null)
         throw new Error("The groupId in the applicationFolderPath() can not be empty.")
 
-    const { rootFolder } = useRootFolderContext()
+    const folderSeparator = !uniformPath && groupId === pwsh ? '\\' : '/'
 
     return sanitizePath(
-        rootFolder[groupId] ?? folderDefaultValue(groupId) +
-        rootFolder[application] ?? folderDefaultValue(groupId),
+        rootFolderPath(groupId) + folderSeparator + applicationFolder(),
         groupId,
         uniformPath
     )
