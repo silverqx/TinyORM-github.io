@@ -121,6 +121,12 @@ html[data-theme='dark'] {
     }
 }
 
+/* Images
+ ---------------------------*/
+img.no-blurry {
+    will-change: transform;
+}
+
 /* Prism syntax highlighting
  ---------------------------*/
 .prism-code {
