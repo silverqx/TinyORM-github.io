@@ -21,7 +21,6 @@ module.exports = {
   titleDelimiter: '-',
   noIndex: false,
   themeConfig: {
-    hideableSidebar: true,
     colorMode: {
       defaultMode: 'dark',
     },
@@ -39,6 +38,10 @@ module.exports = {
           position: 'right',
         },
       ],
+    },
+    sidebar: {
+      hideable: true,
+      autoCollapseCategories: false,
     },
     footer: {
       links: [],
