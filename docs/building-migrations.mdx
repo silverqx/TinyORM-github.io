@@ -235,8 +235,9 @@ set(CMAKE_AUTOMOC ON)\n
 # ---\n
 set(Tom_ns tom)
 set(Tom_target tom)\n
-set(TinyOrmSourceDir "${convertToCmakeEnvVariable(pwsh, applicationFolderPath(pwsh))}/TinyORM/TinyORM")
-set(TinyOrmBuildDir "${convertToCmakeEnvVariable(pwsh, applicationFolderPath(pwsh))}/TinyORM/TinyORM-builds-cmake/build-debug")\n
+file(REAL_PATH "../../TinyORM" TinyMainDir)\n
+set(TinyOrmSourceDir "\${TinyMainDir}/TinyORM")
+set(TinyOrmBuildDir "\${TinyMainDir}/TinyORM-builds-cmake/build-debug")\n
 # TinyORM CMake modules (needed to set the executable version and RC file on Windows)
 list(APPEND CMAKE_MODULE_PATH "\${TinyOrmSourceDir}/cmake/CommonModules")\n
 # build tree
