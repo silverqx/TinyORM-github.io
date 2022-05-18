@@ -19,7 +19,7 @@
     /* --ifm-font-size-base: 95%; */
     /* --ifm-code-font-size: 85%; */
     --ifm-pre-line-height: var(--ifm-line-height-base);
-    --doc-sidebar-width: 230px !important;
+    --doc-sidebar-width: 14rem !important;
     --ifm-footer-padding-vertical: calc(var(--ifm-spacing-vertical) * 1.4);
 }
 
@@ -70,6 +70,10 @@ h1 {
  /* Left menu */
 .menu__link {
     font-size: 0.9rem;
+}
+
+.menu__list-item .menu__list-item {
+    padding-left: 1.3rem;
 }
 
 /* Article content navigation */

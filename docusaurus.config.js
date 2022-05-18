@@ -39,9 +39,11 @@ module.exports = {
         },
       ],
     },
-    sidebar: {
-      hideable: true,
-      autoCollapseCategories: false,
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
     },
     footer: {
       links: [],
