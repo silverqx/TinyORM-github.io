@@ -74,6 +74,12 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/silverqx/TinyORM-github.io/edit/main/',
           routeBasePath: '/',
+          exclude: [
+            // These README.md files are only for github
+            'database/README.md',
+            'tinyorm/README.md',
+            'building/README.md',
+          ],
         },
         blog: false,
         theme: {
