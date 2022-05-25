@@ -103,6 +103,43 @@ module.exports = {
   plugins: [
     // '@docusaurus/plugin-ideal-image',
     // 'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to:   '/building/tinyorm',
+            from: '/building',
+          },
+          {
+            to:   '/database/getting-started',
+            from: '/database',
+          },
+          {
+            to:   '/database/query-builder',
+            from: '/query-builder',
+          },
+          {
+            to:   '/tinyorm/getting-started',
+            from: '/tinyorm',
+          },
+          {
+            to:   '/tinyorm/relationships',
+            from: '/tinyorm-relationships',
+          },
+        ],
+        // createRedirects(existingPath) {
+        //   if (existingPath.includes('/community')) {
+        //     // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
+        //     return [
+        //       existingPath.replace('/community', '/docs/team'),
+        //       existingPath.replace('/community', '/docs/support'),
+        //     ];
+        //   }
+        //   return undefined; // Return a falsy value: no redirect created
+        // },
+      },
+    ],
     function (/*context, options*/) {
       return {
         name: 'webpack-configuration-plugin',
