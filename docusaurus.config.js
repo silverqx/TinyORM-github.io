@@ -65,6 +65,9 @@ module.exports = {
       // Optional: Algolia search parameters
       // searchParameters: {},
     },
+    metadata: [
+      { name: 'keywords', content: 'c++ orm, tinyorm' },
+    ],
   },
   presets: [
     [
