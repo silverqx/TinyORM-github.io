@@ -152,7 +152,8 @@ nav[class*='navbarHidden_']
 
 /* APITable Component
  ---------------------------*/
-#apitable-build-options {
+.apitable-build-options {
+    /* Represents first two elements. [=-0+2, -1+2] */
     td:nth-child(-n+2) {
         vertical-align: top;
     }
