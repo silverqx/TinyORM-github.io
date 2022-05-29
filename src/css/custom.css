@@ -6,6 +6,16 @@
  * work well for content-centric websites.
  */
 
+/*
+  Breakpoints:
+
+  320px  -  480px: Mobile devices
+  481px  -  768px: iPads, Tablets
+  769px  - 1024px: Small screens, laptops
+  1025px - 1200px: Desktops, large screens
+  1201px and more —  Extra large screens, TV
+*/
+
 /* Common
  ---------------------------*/
 :root {
@@ -16,11 +26,16 @@
     --ifm-color-primary-light: rgb(70, 203, 174);
     --ifm-color-primary-lighter: rgb(102, 212, 189);
     --ifm-color-primary-lightest: rgb(146, 224, 208);
-    /* --ifm-font-size-base: 95%; */
-    /* --ifm-code-font-size: 85%; */
+    --ifm-font-size-base: 1.1rem;
+    --ifm-code-font-size: 86%;
     --ifm-pre-line-height: var(--ifm-line-height-base);
     --doc-sidebar-width: 14rem !important;
     --ifm-footer-padding-vertical: calc(var(--ifm-spacing-vertical) * 1.4);
+
+    @media screen and (max-width: 768px) {
+        --ifm-menu-link-padding-vertical: 0.5rem;
+        --ifm-list-item-margin: 0.5rem;
+    }
 }
 
 /* Fonts
@@ -70,6 +85,10 @@ h1 {
  /* Left menu */
 .menu__link {
     font-size: 0.9rem;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.1rem;
+    }
 }
 
 .menu__list-item .menu__list-item {
@@ -77,27 +96,33 @@ h1 {
 }
 
 /* Article content navigation */
-article {
-    header + ul,
-    header + ul ul {
+.markdown {
+    h1 + ul,
+    h1 + ul ul {
         list-style-type: none;
     }
 
-    header + ul li a {
+    @media screen and (max-width: 768px) {
+        h1 + ul li:first-child {
+            margin-top: 0.25rem;
+        }
+    }
+
+    h1 + ul li a {
         font-weight: bold;
     }
 
-    header + ul li li a {
+    h1 + ul li li a {
         font-weight: normal;
     }
 
-    header + ul li a:before {
+    h1 + ul li a:before {
         content: "# ";
         color: var(--ifm-color-info-darker);
         font-size: 90%;
     }
 
-    header + ul li li a:before {
+    h1 + ul li li a:before {
         font-size: 80%;
     }
 }
