@@ -236,7 +236,7 @@ nav[class*='navbarHidden_']
     }
 }
 
-#collection-methods {
+#collection-methods, #supported-compilers {
     & > h4 {
         margin-top: 2rem;
     }
@@ -244,4 +244,8 @@ nav[class*='navbarHidden_']
     & > h4 > code {
         color: var(--ifm-link-color);
     }
+}
+
+#supported-compilers {
+    margin-bottom: 2rem;
 }
