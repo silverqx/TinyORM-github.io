@@ -7,6 +7,7 @@ import {
     application_default, bash_default, pwsh_default
 } from '@theme/constants'
 
+// First folder path defined using an input in the Folders Structure component
 export const rootFolderPath = (groupId, uniformPath = true) =>
     sanitizePath(
         useRootFolderContext().rootFolder[groupId] ?? folderDefaultValue(groupId),
@@ -14,9 +15,11 @@ export const rootFolderPath = (groupId, uniformPath = true) =>
         uniformPath
     )
 
+// Application folder name only (without path)
 export const applicationFolder = () =>
     useRootFolderContext().rootFolder[application] ?? folderDefaultValue(application)
 
+// Second folder path defined using an input in the Folders Structure component
 export const applicationFolderPath = (groupId, uniformPath = true) => {
     if (groupId == null)
         throw new Error("The groupId in the applicationFolderPath() can not be empty.")
