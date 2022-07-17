@@ -16,7 +16,7 @@
   1201px and more —  Extra large screens, TV
 */
 
-/* Common
+/* Common variables
  ---------------------------*/
 :root {
     --ifm-color-primary: #25c2a0;
@@ -38,11 +38,17 @@
     }
 }
 
+[data-theme='dark']:root {
+    --ifm-background-color: #0d1117;
+    --ifm-background-surface-color: #161b22;
+    --ifm-code-background: rgba(255, 255, 255, 0.15);
+    --ifm-footer-background-color: var(--ifm-background-color);
+}
+
 /* Colors
  ---------------------------*/
-
 .darker {
-    color: #aaa;
+    color: #888;
 }
 
 
@@ -133,6 +139,13 @@ h1 {
     h1 + ul li li a:before {
         font-size: 80%;
     }
+}
+
+/* Footer
+ ---------------------------*/
+.footer {
+    padding-top: 0.4rem;
+    padding-bottom: 0.8rem;
 }
 
 /* Code
