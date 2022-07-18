@@ -1,6 +1,6 @@
 .rootFolderInput {
     position: absolute;
-    top: 7px;
+    top: 56px;
     left: 13px;
     z-index: 10;
 
@@ -13,13 +13,13 @@
 }
 
 .rootFolderInput.application {
-    top: 38px;
+    top: 87px;
     left: 48px;
 }
 
 .input {
     font-size: calc(var(--ifm-font-size-base) / 1.1);
-    padding: 0.2rem;
+    padding: 0.2rem 0.4rem;
     border-color: var(--ifm-color-content-secondary);
     border-radius: 2px;
     border-style: solid;

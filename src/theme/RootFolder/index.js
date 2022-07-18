@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import useRootFolderContext from '@theme/hooks/useRootFolderContext'
+import { applicationFolderPath } from '@theme/utils/rootFolderUtils'
 
 /**
  * Show the Root path or Application folder.
@@ -9,9 +9,7 @@ import useRootFolderContext from '@theme/hooks/useRootFolderContext'
  * Value is obtained from the local storage by `groupId`.
  */
 function RootFolder({ groupId }) {
-    const { rootFolder } = useRootFolderContext()
-
-    return <span>{rootFolder[groupId]}</span>
+    return <span>{applicationFolderPath(groupId)}</span>
 }
 
 RootFolder.propTypes = {

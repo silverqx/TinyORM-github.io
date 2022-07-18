@@ -234,6 +234,17 @@ nav[class*='navbarHidden_']
     position: relative;
 }
 
+.tiny-root-folder-info-wrapper {
+    position: absolute;
+    top: 13px;
+    left: 15px;
+    z-index: 10;
+
+    .tiny-root-folder-info-prefix {
+        color: var(--ifm-color-warning-lightest);
+    }
+}
+
 /* Schema builder - Available Column Types
  ---------------------------*/
 #collection-method-list {
