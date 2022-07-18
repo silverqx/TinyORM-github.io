@@ -165,9 +165,9 @@ module.exports = {
               postcssNestedAncestors,
               postcssNested,
               postcssPresetEnv({
-                stage: 1,
+                stage: 2,
+                minimumVendorImplementations: 2,
                 features: {
-                  'color-mod-function': { unresolved: 'throw' },
                   'custom-properties': false,
                 },
               }),

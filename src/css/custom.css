@@ -58,6 +58,7 @@
 
 /* Fonts
  ---------------------------*/
+/* Needs postcss-font-format-keywords for format() keyword in the stage1 */
 /*
 @font-face {
     font-family: 'Scandia-Regular';
