@@ -67,11 +67,13 @@ function main(ev) {
 }
 
 // Fire it up 🕺
-ready(() => {
-    titleInterval = setInterval(setTitle, 30)
+export default function CollapseSidebar() {
+    ready(() => {
+        titleInterval = setInterval(setTitle, 30)
 
-    document.addEventListener('keyup', main)
-})
+        document.addEventListener('keyup', main)
+    })
+}
 
 /**
  * Specify a function to execute when the DOM is fully loaded.
