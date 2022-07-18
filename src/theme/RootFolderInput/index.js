@@ -15,7 +15,10 @@ import styles from './styles.module.css'
  */
 function RootFolderInput({ groupId, label }) {
     const { rootFolder, setRootFolder } = useRootFolderContext()
-    const labelType = isApplicationFolder(groupId) ? 'application' : 'root'
+    const isAppFolder = isApplicationFolder(groupId)
+    const labelType = isAppFolder ? 'application' : 'root'
+    const note = isAppFolder ? `\nThis folder name is common for all shells (eg. pwsh, bash, ...)`
+                             : ''
 
     return (
         <div className={clsx(styles.rootFolderInput, styles[groupId], groupId)}>
@@ -23,7 +26,7 @@ function RootFolderInput({ groupId, label }) {
                 className={clsx(styles.input, styles[groupId], groupId)}
                 placeholder={`Enter ${labelType} folder...`}
                 title={`This ${labelType} folder will be used in all ${label} examples at ` +
-                    `tinyorm.org`}
+                    `tinyorm.org${note}`}
                 onChange={(event) => {
                     setRootFolder(groupId, event.target.value)
                 }}
