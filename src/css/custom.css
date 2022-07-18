@@ -242,8 +242,12 @@ nav[class*='navbarHidden_']
     z-index: 10;
 
     .tiny-root-folder-info-prefix {
-        color: var(--ifm-color-warning-lightest);
+        color: var(--ifm-color-warning-lighter);
     }
+}
+
+html[data-theme='dark'] .tiny-root-folder-info-wrapper .tiny-root-folder-info-prefix {
+    color: var(--ifm-color-warning-lightest);
 }
 
 /* Schema builder - Available Column Types
