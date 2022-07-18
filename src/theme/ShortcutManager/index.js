@@ -1,0 +1,1 @@
+import '@theme/ShortcutManager/CollapseSidebar'
