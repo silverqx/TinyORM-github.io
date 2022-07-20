@@ -189,7 +189,7 @@ module.exports = {
             headTags: [
               {
                 tagName: 'script',
-                innerHTML: `gtag('config', 'AW-989655383');`,
+                innerHTML: `gtag('config', 'AW-989655383');gtag('event', 'conversion', {'send_to': 'AW-989655383/vDYzCM--ks4DENfi89cD'});`,
               },
             ],
           };
