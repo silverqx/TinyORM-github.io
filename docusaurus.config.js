@@ -5,8 +5,6 @@ const postcssPresetEnv = require('postcss-preset-env')
 const postcssNested = require('postcss-nested')
 const postcssNestedAncestors = require('postcss-nested-ancestors')
 
-const isProd = process.env.NODE_ENV === 'production';
-
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'TinyORM',
@@ -177,24 +175,6 @@ module.exports = {
           }
         },
       };
-    },
-    function (/*context, options*/) {
-      return {
-        name: 'tiny-common',
-        injectHtmlTags() {
-          if (!isProd)
-            return {}
-
-          return {
-            headTags: [
-              {
-                tagName: 'script',
-                innerHTML: `gtag('config', 'AW-989655383');`,
-              },
-            ],
-          };
-        },
-      }
     },
   ],
 };
