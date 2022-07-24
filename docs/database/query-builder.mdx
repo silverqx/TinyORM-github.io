@@ -32,6 +32,7 @@ keywords: [c++ orm, sql, c++ sql, c++ query builder, database, query builder, ti
 - [Delete Statements](#delete-statements)
     - [Truncate Statement](#truncate-statement)
 - [Pessimistic Locking](#pessimistic-locking)
+- [Debugging](#debugging)
 
 ## Introduction
 
@@ -116,6 +117,12 @@ You may also use `pluck<quint64>("name", "id")`, it returns the `std::map<quint6
 :::note
 This second `pluck` overload returns `std::map<T, QVariant>` so you have to provide a template argument for the key type.
 :::
+
+#### Concatenate column values
+
+The `implode` method can be used to join column values. For example, you may use this method to concatenate prices with the `, ` character as the glue:
+
+    DB::table("orders")->where("price", ">", 100).implode("price", ", ");
 
 ### Aggregates
 
@@ -558,6 +565,14 @@ The `latest` and `oldest` methods allow you to easily order results by date. By 
                     ->latest()
                     .first();
 
+#### Random Ordering
+
+The `inRandomOrder` method may be used to sort the query results randomly. For example, you may use this method to fetch a random user:
+
+    auto randomUser = DB::table("users")
+                          ->inRandomOrder()
+                          .first();
+
 #### Removing Existing Orderings
 
 The `reorder` method removes all of the "order by" clauses that have previously been applied to the query:
@@ -726,3 +741,11 @@ Alternatively, you may use the `lockForUpdate` method. A "for update" lock preve
             ->where("votes", ">", 100)
             .lockForUpdate()
             .get();
+
+## Debugging
+
+You may use the `dd` and `dump` methods while building a query to dump the current query bindings and SQL. The `dd` method will display the debug information and then stop executing using the `exit(1)`. The `dump` method will display the debug information and continue executing:
+
+    DB::table("users")->where("votes", ">", 100).dd();
+
+    DB::table("users")->where("votes", ">", 100).dump();
