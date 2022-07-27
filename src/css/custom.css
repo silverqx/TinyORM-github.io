@@ -80,19 +80,39 @@
 /* Scrollbars
  ---------------------------*/
 
-::-webkit-scrollbar {
-    width: 14px;
-    height: 14px;
-    background-color: #222526;
-}
+[data-theme='dark'] {
+    ::-webkit-scrollbar {
+        width: 14px;
+        height: 14px;
+        background-color: #222526;
+    }
 
-::-webkit-scrollbar-thumb {
-    background-color: #555;
-    border-radius: 2px;
-}
+    ::-webkit-scrollbar-thumb {
+        background-color: #555;
+        border-radius: 2px;
+    }
 
-::-webkit-scrollbar-thumb:hover {
-    background-color: #777;
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #777;
+    }
+
+    /* Firefox */
+    body {
+        scrollbar-color: #777 #222526 !important;
+        scrollbar-width: 14px;
+    }
+
+    /* Make CSS more specific for dark theme */
+    @media (pointer: fine) {
+        .thin-scrollbar {
+            scrollbar-width: thin;
+        }
+
+        .thin-scrollbar::-webkit-scrollbar {
+            height: var(--ifm-scrollbar-size);
+            width: var(--ifm-scrollbar-size);
+        }
+    }
 }
 
 /* Headings
