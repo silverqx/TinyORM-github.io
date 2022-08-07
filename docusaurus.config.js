@@ -80,6 +80,7 @@ module.exports = {
           editUrl: 'https://github.com/silverqx/TinyORM-github.io/edit/main/',
           routeBasePath: '/',
           exclude: [
+            '**/assets/**',
             // These README.md files are only for github
             'database/README.md',
             'tinyorm/README.md',
