@@ -765,6 +765,10 @@ In the example above, TinyORM will attempt to insert two records. If a record al
 All databases except SQL Server require the columns in the second argument of the `upsert` method to have a "primary" or "unique" index. In addition, the MySQL database driver ignores the second argument of the `upsert` method and always uses the "primary" and "unique" indexes of the table to detect existing records.
 :::
 
+:::info
+Row and column aliases will be used with MySQL server >=8.0.19 instead of the VALUES() function as is described in the MySQL [documentation](https://dev.mysql.com/doc/refman/8.0/en/insert-on-duplicate.html). The MySQL server version is auto-detected and can be overridden in the [configuration](/database/getting-started.mdx#configuration).
+:::
+
 ## Update Statements
 
 In addition to inserting records into the database, the query builder can also update existing records using the `update` method. The `update` method, accepts a `QVector<Orm::UpdateItem>` of column and value pairs, indicating the columns to be updated and returns a `std::tuple<int, QSqlQuery>` . You may constrain the `update` query using `where` clauses:
