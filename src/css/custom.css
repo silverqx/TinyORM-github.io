@@ -320,3 +320,13 @@ html[data-theme='dark'] .tiny-root-folder-info-wrapper .tiny-root-folder-info-pr
 #supported-compilers {
     margin-bottom: 2rem;
 }
+
+/* Schema builder - Available Column Types
+ ---------------------------*/
+#casts-types-list {
+    font-size: 92%;
+
+    li > code {
+        color: var(--ifm-link-color);
+    }
+}
