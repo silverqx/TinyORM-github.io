@@ -290,7 +290,7 @@ html[data-theme='dark'] .tiny-root-folder-info-wrapper .tiny-root-folder-info-pr
 
 /* Schema builder - Available Column Types
  ---------------------------*/
-#collection-method-list {
+#tom-column-types-list {
     & > p {
         column-count: 3;
         column-gap: 2em;
@@ -307,7 +307,7 @@ html[data-theme='dark'] .tiny-root-folder-info-wrapper .tiny-root-folder-info-pr
     }
 }
 
-#collection-methods, #supported-compilers {
+#tom-column-types, #supported-compilers {
     & > h4 {
         margin-top: 2rem;
     }
