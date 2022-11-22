@@ -36,8 +36,10 @@ module.exports = {
       items: [
         {
           href: 'https://github.com/silverqx/TinyORM',
-          label: 'GitHub',
           position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'TinyORM GitHub repository',
+          title: 'TinyORM GitHub repository',
         },
       ],
     },
