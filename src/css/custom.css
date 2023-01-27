@@ -43,6 +43,7 @@
     --ifm-background-surface-color: #161b22;
     --ifm-toc-border-color: #30363d;
     --ifm-code-background: rgba(255, 255, 255, 0.15);
+    --docusaurus-highlighted-code-line-bg: #30323f;
     --ifm-footer-background-color: var(--ifm-background-color);
 
     --docsearch-key-gradient: linear-gradient(-26.5deg, var(--ifm-color-emphasis-200) 0%,
