@@ -24,7 +24,7 @@ function setExpandTitle() {
  * Add the (q) to the title of the Collapse sidebar button.
  */
 function setTitle() {
-    btn = document.querySelector('.theme-doc-sidebar-container > div > button')
+    btn = document.querySelector('.theme-doc-sidebar-container > div > div > button')
 
     // Try only for 1500ms
     if (titleCounter >= 50) {
