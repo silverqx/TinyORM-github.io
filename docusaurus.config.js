@@ -153,6 +153,8 @@ module.exports = {
         name: 'webpack-configuration-plugin',
         configureWebpack(/*config, isServer, utils*/) {
           return {
+            // If needed use the 'source-map' in the production
+            devtool: isProd ? false : 'eval-source-map',
             resolve: {
               symlinks: false,
             },
