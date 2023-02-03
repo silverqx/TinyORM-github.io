@@ -125,7 +125,7 @@ function getPrismTokensMap() {
     if (prismTokensMapCache)
         return prismTokensMapCache
 
-    const prismCodesList = document.getElementById('tinyorm-configuration1')
+    const prismCodesList = document.getElementById('tinyorm-configuration')
                                   ?.querySelectorAll('.prism-code > code')
 
     // No prism tokens found
