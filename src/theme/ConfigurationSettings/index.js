@@ -49,8 +49,8 @@ function toggleFullConfig(value) {
 let tabsCache = null
 
 function getTabsContainerList() {
-    if (tabsCache)
-        return tabsCache
+    // if (tabsCache)
+    //     return tabsCache
 
     return tabsCache = document.getElementById('tinyorm-configuration')
                                .querySelectorAll('.tabs-container')
@@ -94,8 +94,8 @@ function toggleEnvPrefix(value) {
 let prismTokensMapCache = null
 
 function getPrismTokensMap() {
-    if (prismTokensMapCache)
-        return prismTokensMapCache
+    // if (prismTokensMapCache)
+    //     return prismTokensMapCache
 
     const prismCodesList = document.getElementById('tinyorm-configuration')
                                    .querySelectorAll('.prism-code > code')
