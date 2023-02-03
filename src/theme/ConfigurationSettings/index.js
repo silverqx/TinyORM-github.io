@@ -1,8 +1,20 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react'
+
+let tabsCache = null
+let prismTokensMapCache = null
 
 export default function ConfigurationSettings() {
     const [checkedFullConfig, setCheckedFullConfig] = useState(false)
     const [checkedEnvPrefix, setCheckedEnvPrefix] = useState(false)
+
+    useEffect(() => {
+        clearCaches()
+
+        return () => {
+            clearCaches()
+        }
+    }, [])
 
     return (
         <form>
@@ -29,9 +41,23 @@ export default function ConfigurationSettings() {
     )
 }
 
+function clearCaches() {
+    tabsCache = null
+    prismTokensMapCache = null
+}
+
 function toggleFullConfig(value) {
     const tabs = getTabsContainerList()
-    const showFull = value = !value
+    const showFull = !value
+
+    // No .tabs-container found, so don't toggle and return the same value
+    if (!tabs)
+        return value
+
+    // Must find 2 .tabs-container-s
+    if (tabs.length !== 2)
+        throw new Error('Wrong number of .tabs-container (!== 2) found in the toggle ' +
+            `configuration feature, found ${tabs.length}.`)
 
     if (showFull) {
         tabs[0].style.display = 'none'
@@ -43,17 +69,16 @@ function toggleFullConfig(value) {
         tabs[1].style.display = 'none'
     }
 
-    return value
+    // Toggle
+    return !value
 }
 
-let tabsCache = null
-
 function getTabsContainerList() {
-    // if (tabsCache)
-    //     return tabsCache
+    if (tabsCache)
+        return tabsCache
 
     return tabsCache = document.getElementById('tinyorm-configuration')
-                               .querySelectorAll('.tabs-container')
+                              ?.querySelectorAll('.tabs-container')
 }
 
 const DbPrefix = '"DB_'
@@ -68,10 +93,14 @@ const prefixMap = [
 
 function toggleEnvPrefix(value) {
     const prismTokensMap = getPrismTokensMap()
-    const addEnvPrefix = value = !value
+    const addEnvPrefix = !value
+
+    // No prism tokens found, so don't toggle and return the same value
+    if (!prismTokensMap)
+        return value
 
     prismTokensMap.forEach((tokens, index) => {
-        tokens.forEach((token) => {
+        tokens.forEach(token => {
             const tokenContent = token.textContent;
             const prefix = `${DbPrefix}${prefixMap[index]}_`
 
@@ -88,17 +117,25 @@ function toggleEnvPrefix(value) {
         })
     })
 
-    return value
+    // Toggle
+    return !value
 }
 
-let prismTokensMapCache = null
-
 function getPrismTokensMap() {
-    // if (prismTokensMapCache)
-    //     return prismTokensMapCache
+    if (prismTokensMapCache)
+        return prismTokensMapCache
 
-    const prismCodesList = document.getElementById('tinyorm-configuration')
-                                   .querySelectorAll('.prism-code > code')
+    const prismCodesList = document.getElementById('tinyorm-configuration1')
+                                  ?.querySelectorAll('.prism-code > code')
+
+    // No prism tokens found
+    if (!prismCodesList)
+        return prismCodesList
+
+    // Must find 6 configuration examples
+    if (prismCodesList.length !== 6)
+        throw new Error('Wrong number of .prism-code > code (!== 6) found in the prefix env. ' +
+            `feature, found ${prismCodesList.length}.`)
 
     // Pre-allocate a new array
     prismTokensMapCache = new Array(prismCodesList.length)
@@ -107,7 +144,7 @@ function getPrismTokensMap() {
         // Filter all prism tokens (span elements) whose content starts with the "DB_ string
         prismTokensMapCache[index] =
             Array.from(codeElement.querySelectorAll('.token.string'))
-            .filter((token) => token.textContent.startsWith(DbPrefix));
+            .filter(token => token?.textContent.startsWith(DbPrefix));
     })
 
     return prismTokensMapCache
