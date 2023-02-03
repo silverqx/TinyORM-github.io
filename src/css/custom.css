@@ -345,3 +345,34 @@ html[data-theme='dark'] .tiny-root-folder-info-wrapper .tiny-root-folder-info-pr
         color: var(--ifm-link-color);
     }
 }
+
+/* ConfigurationSettings (Database: Getting Started)
+ ---------------------------*/
+#tinyorm-configuration {
+    position: relative;
+
+    form {
+        position: absolute;
+        top: 1em;
+        right: 0;
+    }
+
+    .tinyorm-configuration-row {
+        text-align: right;
+    }
+
+    label {
+        font-family: var(--ifm-font-family-base);
+        font-size: 0.7rem;
+        color: #bbb;
+        vertical-align: text-bottom;
+    }
+
+    input {
+        vertical-align: middle;
+    }
+
+    & > div:last-child {
+        display: none;
+    }
+}
