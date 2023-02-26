@@ -206,6 +206,23 @@ h1 {
     padding-bottom: 0.8rem;
 }
 
+/* Lists
+ ---------------------------*/
+#databases-supported-versions {
+    ul ul {
+        margin-top: 0.2rem;
+
+        li {
+            font-size: 90%;
+            line-height: 1.35;
+        }
+
+        li a {
+            font-size: 95%;
+        }
+    }
+}
+
 /* Code
  ---------------------------*/
 .docusaurus-highlight-code-line {
