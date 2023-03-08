@@ -83,12 +83,13 @@ function getTabsContainerList() {
 
 const DbPrefix = '"DB_'
 
+const MARIA = 'MARIA'
 const MYSQL = 'MYSQL'
 const PGSQL = 'PGSQL'
 const SQLITE = 'SQLITE'
 const prefixMap = [
-    MYSQL, PGSQL, SQLITE,
-    MYSQL, PGSQL, SQLITE,
+    MYSQL, PGSQL, SQLITE, MARIA,
+    MYSQL, PGSQL, SQLITE, MARIA,
 ]
 
 function toggleEnvPrefix(value) {
@@ -132,9 +133,9 @@ function getPrismTokensMap() {
     if (!prismCodesList)
         return prismCodesList
 
-    // Must find 6 configuration examples
-    if (prismCodesList.length !== 6)
-        throw new Error('Wrong number of .prism-code > code (!== 6) found in the prefix env. ' +
+    // Must find 8 configuration examples
+    if (prismCodesList.length !== 8)
+        throw new Error('Wrong number of .prism-code > code (!== 8) found in the prefix env. ' +
             `feature, found ${prismCodesList.length}.`)
 
     // Pre-allocate a new array
