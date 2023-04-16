@@ -199,11 +199,11 @@ And paste the following code.
             {Version,         {}}, // Autodetect
             {options_,        QVariantHash()},
         },
-            QStringLiteral("tinyorm_tom"));
+            QStringLiteral("tinyorm_tom")); // shell:connection
     }
 
 :::tip
-If you have defined more database connections then you can tag the lines with the database connection names with the `// shell:connection` comment and this connection names will be provided to the bash/zsh/pwsh completion for the `--database=` option, [example](https://github.com/silverqx/TinyORM/blob/main/examples/tom/main.cpp#L74).
+If you have defined more database connections then you can tag the lines with the database connection names with the `// shell:connection` comment and this connection names will be provided to the bash/zsh/pwsh completion for the `--database=` option 😎, [example](https://github.com/silverqx/TinyORM/blob/main/examples/tom/main.cpp#L74).
 :::
 
 ### Migrations
