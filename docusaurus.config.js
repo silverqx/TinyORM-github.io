@@ -94,7 +94,7 @@ module.exports = {
           customCss: [require.resolve('./src/css/custom.css')],
         },
         sitemap: {
-          changefreq: 'monthly',
+          changefreq: 'weekly',
         },
         gtag: {
           // You can also use your "G-" Measurement ID here.
