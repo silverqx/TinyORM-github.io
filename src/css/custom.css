@@ -320,9 +320,11 @@ html[data-theme='dark'] .tiny-root-folder-info-wrapper .tiny-root-folder-info-pr
     color: var(--ifm-color-warning-lightest);
 }
 
-/* Schema builder - Available Column Types
+/* Database: Schema builder - Available Column Types
+   TinyORM: Collections - Available Methods
+   Supported Compilers
  ---------------------------*/
-#tom-column-types-list {
+.tom-column-types-list, .collection-methods-list {
     & > p {
         column-count: 3;
         column-gap: 2em;
@@ -336,10 +338,13 @@ html[data-theme='dark'] .tiny-root-folder-info-wrapper .tiny-root-folder-info-pr
 
     a {
         display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }
 
-#tom-column-types, #supported-compilers {
+.tom-column-types, #supported-compilers, .collection-methods {
     & > h4 {
         margin-top: 2rem;
     }
@@ -353,7 +358,7 @@ html[data-theme='dark'] .tiny-root-folder-info-wrapper .tiny-root-folder-info-pr
     margin-bottom: 2rem;
 }
 
-/* Schema builder - Available Column Types
+/* TinyORM: Casts - Attribute Casting
  ---------------------------*/
 #casts-types-list {
     font-size: 92%;
@@ -363,7 +368,7 @@ html[data-theme='dark'] .tiny-root-folder-info-wrapper .tiny-root-folder-info-pr
     }
 }
 
-/* ConfigurationSettings (Database: Getting Started)
+/* Database: Getting Started - ConfigurationSettings
  ---------------------------*/
 #tinyorm-configuration {
     position: relative;
