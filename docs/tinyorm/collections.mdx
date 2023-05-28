@@ -383,7 +383,7 @@ You can also call all `last` overloads provided by the [`QList::last`](https://d
 
 The `load` method eager loads the given relationships for all models in the collection:
 
-    users.load({{"comments"}, {"posts"}});
+    users.load({"comments", "posts"});
 
     users.load("comments.author");
 
@@ -509,6 +509,10 @@ The `pluck` method retrieves all of the values for a given column, the following
     auto plucked = products.pluck("name");
 
     // {Desk, Chair}
+
+The second overload allows returning the custom type `QVector<T>`:
+
+    auto plucked = products.pluck<QString>("name");
 
 You may also specify how you wish the resulting collection to be keyed, this overload returns the `std::map<T, QVariant>`:
 
