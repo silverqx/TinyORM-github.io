@@ -21,8 +21,11 @@ function RootFolderInput({ groupId, label }) {
                              : ''
 
     return (
-        <div className={clsx(styles.rootFolderInput, styles[groupId], groupId)}>
+        <form name="tinyorm-root-folder-form"
+            className={clsx(styles.rootFolderInput, styles[groupId], groupId)}
+        >
             <input
+                name='tinyorm-root-folder-input'
                 className={clsx(styles.input, styles[groupId], groupId)}
                 placeholder={`Enter ${labelType} folder...`}
                 title={`This ${labelType} folder will be used in all ${label} examples at ` +
@@ -32,7 +35,7 @@ function RootFolderInput({ groupId, label }) {
                 }}
                 value={rootFolder[groupId] ?? folderDefaultValue(groupId)}
             />
-        </div>
+        </form>
     )
 }
 
