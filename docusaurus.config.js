@@ -10,7 +10,7 @@ const isProd = process.env.NODE_ENV === 'production';
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'TinyORM',
-  tagline: 'c++ ORM library for Qt framework',
+  tagline: 'C++ ORM library for Qt framework',
   url: 'https://www.tinyorm.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
