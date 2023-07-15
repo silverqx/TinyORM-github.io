@@ -70,6 +70,7 @@ module.exports = {
       // searchParameters: {},
     },
     metadata: [
+      // These keywords will be used when the front matter keywords option isn't defined
       { name: 'keywords', content: 'c++ orm, tinyorm' },
     ],
   },
