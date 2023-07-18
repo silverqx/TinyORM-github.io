@@ -16,7 +16,6 @@
 .env.production.local
 /docusaurus-2_algolia.json
 /dotenv.ps1
-/.vscode/
 
 npm-debug.log*
 yarn-debug.log*
