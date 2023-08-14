@@ -25,6 +25,7 @@
         "nullvariant.hpp",
         "orDoesntHave",
         "QDateTime",
+        "QMAKESPEC",
         "QSTRINGBUILDER",
         "qtenv",
         "qtquickcompiler",
