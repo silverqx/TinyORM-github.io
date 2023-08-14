@@ -174,28 +174,57 @@ h1 {
         list-style-type: none;
     }
 
-    @media screen and (max-width: 768px) {
-        h1 + ul li:first-child {
-            margin-top: 0.25rem;
+    h1 + ul  {
+        @media screen and (max-width: 768px) {
+            li:first-child {
+                margin-top: 0.25rem;
+            }
         }
-    }
 
-    h1 + ul li a {
-        font-weight: bold;
-    }
+        li a {
+            font-weight: bold;
+        }
 
-    h1 + ul li li a {
-        font-weight: normal;
-    }
+        li li a {
+            font-weight: normal;
+        }
 
-    h1 + ul li a:before {
-        content: "# ";
-        color: var(--ifm-color-info-darker);
-        font-size: 90%;
-    }
+        li a:before {
+            content: "# ";
+            color: var(--ifm-color-info-darker);
+            font-size: 90%;
+        }
 
-    h1 + ul li li a:before {
-        font-size: 80%;
+        li li a:before {
+            font-size: 80%;
+        }
+
+        ul ul {
+            margin-bottom: -0.25rem;
+            padding-left: 1rem;
+        }
+
+        li li:last-child ul {
+            margin-bottom: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            ul ul {
+                margin-bottom: 0;
+            }
+
+            li li li:first-child {
+                margin-top: 0.5rem;
+            }
+        }
+
+        li li li a {
+            font-size: 95%;
+        }
+
+        li li li a:before {
+            font-size: 75%;
+        }
     }
 }
 
