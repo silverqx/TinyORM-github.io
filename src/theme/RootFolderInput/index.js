@@ -23,6 +23,10 @@ function RootFolderInput({ groupId, label }) {
     return (
         <form name="tinyorm-root-folder-form"
             className={clsx(styles.rootFolderInput, styles[groupId], groupId)}
+            onSubmit={(event) => {
+                event.preventDefault()
+                event.stopPropagation()
+            }}
         >
             <input
                 name='tinyorm-root-folder-input'
