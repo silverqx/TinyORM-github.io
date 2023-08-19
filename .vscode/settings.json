@@ -22,6 +22,7 @@
         "mapWithKeys",
         "mapWithModelKeys",
         "modelKeys",
+        "mysqlclient",
         "nullvariant.hpp",
         "orDoesntHave",
         "QDateTime",
