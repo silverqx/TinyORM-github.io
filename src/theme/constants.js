@@ -25,6 +25,6 @@ export const postgres_label = 'PostgreSQL'
 export const sqlite_label = 'SQLite'
 
 // Others
-export const application_default = 'TestApp'
+export const application_default = 'tinyorm.org'
 export const bash_default = '$HOME/Code/c/'
 export const pwsh_default = '$env:USERPROFILE\\Code\\c\\'
