@@ -511,7 +511,7 @@ Read the [Consume TinyOrm library (qmake)](tinyorm.mdx#consume-tinyorm-library-q
 
 Create the `.qmake.conf` file in the `HelloWorld` project root folder with the following content.
 
-```qmake
+```qmake title='.qmake.conf'
 # Path to the PARENT folder of the TinyORM source folder
 TINY_MAIN_DIR = $$clean_path($$PWD/../../TinyORM/)
 # To find .env and .env.$$QMAKE_PLATFORM files
