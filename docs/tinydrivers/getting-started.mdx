@@ -74,6 +74,20 @@ It builds two shared libraries, the `TinyDrivers` shared library that contains t
 The `TinyMySql` links directly against the `MySQL C connector` (`libmysql` or `mysqlclient` library).
 :::
 
+#### `CMake`/`qmake` build options
+
+##### For `CMake`
+
+See [CMake build options](building/tinyorm.mdx#cmake-build-options), related `CMake` build options are:<br/>[`BUILD_DRIVERS`](building/tinyorm.mdx#BUILD_DRIVERS), [`BUILD_MYSQL_DRIVERS`](building/tinyorm.mdx#BUILD_MYSQL_DRIVERS), and [`DRIVERS_TYPE`](building/tinyorm.mdx#DRIVERS_TYPE)
+
+To control shared and static build use [`BUILD_SHARED_LIBS`](https://cmake.org/cmake/help/latest/variable/BUILD_SHARED_LIBS.html) `CMake` configuration option.
+
+##### For `qmake`
+
+See [qmake build options](building/tinyorm.mdx#qmake-build-options), related `qmake` configuration options are:<br/>[`build_loadable_drivers`](building/tinyorm.mdx#build_loadable_drivers), [`build_mysql_driver`](building/tinyorm.mdx#build_mysql_driver), [`build_shared_drivers`](building/tinyorm.mdx#build_shared_drivers), and [`build_static_drivers`](building/tinyorm.mdx#build_static_drivers)
+
+To control shared and static build use [`staticlib`](https://doc.qt.io/qt/qmake-variable-reference.html#config) `qmake` configuration option.
+
 ### Performance
 
 Performance is several milliseconds faster compared to `QtSql` with the `QMYSQL` driver. It was tuned using the `KCacheGrind` to be so. It's ~40ms faster on [`TinyOrmPlayground`](https://github.com/silverqx/TinyOrmPlayground) project with __620__ database queries compiled using `GCC v13.2.1` Debug build on Linux. Similar results can be expected on other platforms but it's not guaranteed.
