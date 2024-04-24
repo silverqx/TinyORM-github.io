@@ -303,6 +303,8 @@ nav[class*='navbarHidden_']
 /* APITable Component
  ---------------------------*/
 .apitable-build-options {
+    font-size: 94%;
+
     /* Represents first two elements. [=-0+2, -1+2] */
     td:nth-child(-n+2) {
         vertical-align: top;
@@ -314,10 +316,13 @@ nav[class*='navbarHidden_']
 }
 
 #apitable-c-macros td:first-child {
+    font-size: 94%;
     vertical-align: top;
 }
 
 #apitable-dropping-indexes {
+    font-size: 94%;
+
     th:last-child {
         width: 50%;
     }
