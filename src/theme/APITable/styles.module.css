@@ -5,14 +5,18 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+.apiTable {
+  /* font-size: small; */
+}
+
 .apiTable tbody tr {
-    transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
 }
 
 .apiTable tbody tr:focus,
 .apiTable tbody tr:hover {
-    cursor: pointer;
-    outline: none;
-    box-shadow: 0 0 4.5px 0 inset var(--ifm-color-warning);
-    transition: box-shadow 0.1s;
+  outline: none;
+  box-shadow: 0 0 4.5px 0 inset var(--ifm-color-warning);
+  cursor: pointer;
+  transition: box-shadow 0.1s;
 }
