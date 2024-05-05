@@ -85,9 +85,9 @@ module.exports = {
           exclude: [
             '**/assets/**',
             // These README.md files are only for github
+            'building/README.md',
             'database/README.md',
             'tinyorm/README.md',
-            'building/README.md',
           ],
         },
         blog: false,
