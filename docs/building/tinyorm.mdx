@@ -446,7 +446,7 @@ cd TinyORM-builds-cmake/build-debug
 
 ##### CMake `STRICT_MODE` option
 
-The `STRICT_MODE` `CMake` configuration option was added in `TinyORM` `v0.37.2`. This option was added to avoid the propagation of aggressive strict warning compiler/linker options and Qt definitions from the `TinyORM` library to user code through the [`TinyOrm::CommonConfig`](https://github.com/silverqx/TinyORM/blob/main/cmake/CommonModules/TinyCommon.cmake) interface library.
+The `STRICT_MODE` `CMake` configuration option was added in `TinyORM` `v0.37.3`. This option was added to avoid the propagation of aggressive strict warning compiler/linker options and Qt definitions from the `TinyORM` library to user code through the [`TinyOrm::CommonConfig`](https://github.com/silverqx/TinyORM/blob/main/cmake/CommonModules/TinyCommon.cmake) interface library.
 
 `TinyORM` uses the strictest warning level options, virtually anything that can be enabled is enabled to produce a better code. I highly recommend enabling this option to produce better code and to follow good practices. It also helps to follow the `ISOCPP` [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) standards.
 
@@ -532,7 +532,7 @@ Important `CMake` options.
 | `CMAKE_DISABLE_PRECOMPILE_HEADERS` | `OFF`   | Disable precompiled headers. |
 | `CMAKE_CXX_COMPILER`               | `auto`  | The full path to the `C++` compiler. |
 | `CMAKE_CXX_COMPILER_LAUNCHER`      | `-`     | Default compiler launcher to use for the `C++` compiler.<br/>Can be used to enable `ccache`, eg. `ccache.exe` on `MinGW` or `/usr/bin/ccache` on `Linux`. |
-| `CMAKE_EXPORT_PACKAGE_REGISTRY`    | `ON`    | Enable the `export(TinyOrm)` command.<br/>`TinyORM` sets this variable to `ON` by default. |
+| `CMAKE_EXPORT_PACKAGE_REGISTRY`    | `OFF`   | Enable the `export(TinyOrm)` command.<br/>`TinyORM` doesn't set this variable by default. Its initial value is taken from the `TINYORM_EXPORT_PACKAGE_REGISTRY` environment variable if not already defined. |
 | `CMAKE_VERBOSE_MAKEFILE`           | `OFF`   | Enable verbose output from Makefile builds. |
 
 </APITable>
@@ -543,7 +543,7 @@ Important `CMake` options.
 In your application or library `CMakeLists.txt` file add following `find_package()` call.
 
 ```cmake title='CMakeLists.txt'
-find_package(TinyOrm 0.37.2 CONFIG REQUIRED)
+find_package(TinyOrm 0.37.3 CONFIG REQUIRED)
 ```
 
 If the `TinyORM` build tree is not exported to the CMake's [`User Package Registry`](https://cmake.org/cmake/help/latest/manual/cmake-packages.7.html#user-package-registry) then also add the `TinyORM` build tree or `CMAKE_INSTALL_PREFIX` folder to the `CMAKE_PREFIX_PATH`, so CMake can find TinyORM's package configuration file during `find_package(TinyOrm)` call.
