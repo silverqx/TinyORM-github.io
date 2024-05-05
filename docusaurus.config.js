@@ -87,6 +87,7 @@ module.exports = {
             // These README.md files are only for github
             'building/README.md',
             'database/README.md',
+            'tinydrivers/README.md',
             'tinyorm/README.md',
           ],
         },
