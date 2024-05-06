@@ -58,7 +58,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      defaultLanguage: 'cpp',
+      defaultLanguage: 'cpp', // If no language defined after the ```
       additionalLanguages: ['cmake', 'powershell'],
     },
     algolia: {
