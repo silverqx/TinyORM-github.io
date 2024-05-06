@@ -12,21 +12,21 @@ import React, {
   isValidElement,
   useRef,
   useEffect,
-} from 'react'
-// import useBrokenLinks from '@docusaurus/useBrokenLinks'
-import {useHistory} from '@docusaurus/router'
-import styles from './styles.module.css'
+} from 'react';
+import useBrokenLinks from '@docusaurus/useBrokenLinks';
+import {useHistory} from '@docusaurus/router';
+import styles from './styles.module.css';
 
 interface Props {
-  readonly children: ReactElement<ComponentProps<'table'>>
-  readonly name?: string
+  readonly children: ReactElement<ComponentProps<'table'>>;
+  readonly name?: string;
 }
 
 // ReactNode equivalent of HTMLElement#innerText
 function getRowName(node: ReactElement): string {
-  let curNode: ReactNode = node
+  let curNode: ReactNode = node;
   while (isValidElement(curNode)) {
-    [curNode] = React.Children.toArray(curNode.props.children)
+    [curNode] = React.Children.toArray(curNode.props.children);
   }
   if (typeof curNode !== 'string') {
     throw new Error(
@@ -35,9 +35,9 @@ function getRowName(node: ReactElement): string {
         null,
         2,
       )}`,
-    )
+    );
   }
-  return curNode as string
+  return curNode as string;
 }
 
 function APITableRow(
@@ -47,36 +47,35 @@ function APITableRow(
   }: {name: string | undefined; children: ReactElement<ComponentProps<'tr'>>},
   ref: React.ForwardedRef<HTMLTableRowElement>,
 ) {
-  const entryName = getRowName(children)
-  const id = name ? `${name}-${entryName}` : entryName
-  const anchor = `#${id}`
-  const history = useHistory()
-  // useBrokenLinks().collectAnchor(id)
+  const entryName = getRowName(children);
+  const id = name ? `${name}-${entryName}` : entryName;
+  const anchor = `#${id}`;
+  const history = useHistory();
+  useBrokenLinks().collectAnchor(id);
   return (
     <tr
       id={id}
       tabIndex={0}
       ref={history.location.hash === anchor ? ref : undefined}
       onClick={(e) => {
-        const targetElement = e.target as HTMLElement
-        const isLinkClick =
-          targetElement.tagName.toUpperCase() === 'A' ||
-          targetElement.parentElement?.tagName.toUpperCase() === 'A'
+        const targetElement = e.target as HTMLElement;
+        const isLinkClick = [targetElement, targetElement.parentElement]
+            .some(el => el?.tagName.toUpperCase() === 'A');
         if (!isLinkClick) {
-          history.push(anchor)
+          history.push(anchor);
         }
       }}
       onKeyDown={(e: React.KeyboardEvent) => {
         if (e.key === 'Enter') {
-          history.push(anchor)
+          history.push(anchor);
         }
       }}>
       {children.props.children}
     </tr>
-  )
+  );
 }
 
-const APITableRowComp = React.forwardRef(APITableRow)
+const APITableRowComp = React.forwardRef(APITableRow);
 
 /*
  * Note: this is not a quite robust component since it makes a lot of
@@ -84,19 +83,19 @@ const APITableRowComp = React.forwardRef(APITableRow)
  * should be generally correct in the MDX context.
  */
 export default function APITable({children, name}: Props): JSX.Element {
-  // if (children.type !== 'table') {
-  //   throw new Error(
-  //     'Bad usage of APITable component.\nIt is probably that your Markdown table is malformed.\nMake sure to double-check you have the appropriate number of columns for each table row.',
-  //   )
-  // }
+  if (children.type !== 'table') {
+    throw new Error(
+      'Bad usage of APITable component.\nIt is probably that your Markdown table is malformed.\nMake sure to double-check you have the appropriate number of columns for each table row.',
+    );
+  }
   const [thead, tbody] = React.Children.toArray(children.props.children) as [
     ReactElement<{children: ReactElement[]}>,
     ReactElement<{children: ReactElement[]}>,
-  ]
-  const highlightedRow = useRef<HTMLTableRowElement>(null)
+  ];
+  const highlightedRow = useRef<HTMLTableRowElement>(null);
   useEffect(() => {
-    highlightedRow.current?.focus()
-  }, [highlightedRow])
+    highlightedRow.current?.focus();
+  }, [highlightedRow]);
   const rows = React.Children.map(
     tbody.props.children,
     (row: ReactElement<ComponentProps<'tr'>>) => (
@@ -104,12 +103,12 @@ export default function APITable({children, name}: Props): JSX.Element {
         {row}
       </APITableRowComp>
     ),
-  )
+  );
 
   return (
     <table className={styles.apiTable}>
       {thead}
       <tbody>{rows}</tbody>
     </table>
-  )
+  );
 }
