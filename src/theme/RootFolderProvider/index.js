@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 
 import RootFolderContext from '@theme/RootFolderContext'
 import useRootFolder from '@theme/hooks/useRootFolder'

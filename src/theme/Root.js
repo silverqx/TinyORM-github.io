@@ -1,5 +1,3 @@
-import React from 'react'
-
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 import RootFolderProvider from '@theme/RootFolderProvider'
 
