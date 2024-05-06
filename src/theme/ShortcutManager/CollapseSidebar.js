@@ -53,9 +53,11 @@ function setTitle() {
  * @param {KeyboardEvent} ev
  */
 function main(ev) {
+    const target = ev.target
+    const nodeName = ev.target.nodeName
     // Skip editable elements
-    if (ev.target.isContentEditable || ev.target.nodeName === 'INPUT' ||
-        ev.target.nodeName === 'TEXTAREA' || ev.target.nodeName === 'SELECT')
+    if (target.isContentEditable ||
+        nodeName === 'INPUT' || nodeName === 'TEXTAREA' || nodeName === 'SELECT')
         return
 
     if (ev.code !== 'KeyQ')

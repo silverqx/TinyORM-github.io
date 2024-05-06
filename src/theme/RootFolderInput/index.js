@@ -22,7 +22,7 @@ function RootFolderInput({ groupId, label }) {
     return (
         <form name="tinyorm-root-folder-form"
             className={clsx(styles.rootFolderInput, styles[groupId], groupId)}
-            onSubmit={(event) => {
+            onSubmit={event => {
                 event.preventDefault()
                 event.stopPropagation()
             }}
@@ -33,7 +33,7 @@ function RootFolderInput({ groupId, label }) {
                 placeholder={`Enter ${labelType} folder...`}
                 title={`This ${labelType} folder will be used in all ${label} examples at ` +
                     `tinyorm.org${note}`}
-                onChange={(event) => {
+                onChange={event => {
                     setRootFolder(groupId, event.target.value)
                 }}
                 value={rootFolder[groupId] ?? folderDefaultValue(groupId)}
