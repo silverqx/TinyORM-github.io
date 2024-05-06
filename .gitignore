@@ -14,7 +14,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/docusaurus-2_algolia.json
+/docusaurus_algolia.json
 /dotenv.ps1
 
 npm-debug.log*
