@@ -58,7 +58,7 @@ module.exports = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
       defaultLanguage: 'cpp', // If no language defined after the ```
-      additionalLanguages: ['cmake', 'powershell'],
+      additionalLanguages: ['cmake', 'powershell', 'bash'],
     },
     algolia: {
       appId: 'ML6TJ6GTSR',
