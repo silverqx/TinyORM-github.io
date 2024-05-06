@@ -57,7 +57,7 @@ export function folderDefaultValue(groupId) {
 }
 
 export function isApplicationFolder(groupId) {
-    return groupId === application ? true : false
+    return groupId === application
 }
 
 /**
