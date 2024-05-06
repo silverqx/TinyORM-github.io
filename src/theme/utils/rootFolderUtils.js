@@ -3,8 +3,9 @@ import useRootFolderContext from '@theme/hooks/useRootFolderContext'
 import useIsBrowser from '@docusaurus/useIsBrowser'
 
 import {
-    pwsh, bash, application,
-    application_default, bash_default, pwsh_default
+    application, application_default,
+    bash, bash_default,
+    pwsh, pwsh_default
 } from '@theme/constants'
 
 // First folder path defined using an input in the Folders Structure component

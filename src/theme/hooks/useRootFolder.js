@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import { createStorageSlot, listStorageKeys } from '@docusaurus/theme-common'
 
