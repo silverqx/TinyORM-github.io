@@ -1,9 +1,8 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
-const postcssImport = require('postcss-import')
-const postcssPresetEnv = require('postcss-preset-env')
-const postcssNested = require('postcss-nested')
-const postcssNestedAncestors = require('postcss-nested-ancestors')
+import postcssImport from 'postcss-import'
+import postcssNested from 'postcss-nested'
+import postcssNestedAncestors from 'postcss-nested-ancestors'
+import postcssPresetEnv from 'postcss-preset-env'
+import { themes as prismThemes } from 'prism-react-renderer'
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -56,8 +55,8 @@ module.exports = {
         `<a href="https://github.com/silverqx" target="_blank">Silver Zachara</a>`,
     },
     prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
       defaultLanguage: 'cpp', // If no language defined after the ```
       additionalLanguages: ['cmake', 'powershell'],
     },
