@@ -360,6 +360,16 @@ html[data-theme='dark'] .tiny-root-folder-info-wrapper .tiny-root-folder-info-pr
     color: var(--ifm-color-warning-lightest);
 }
 
+/* API Stability
+ ---------------------------*/
+.api-stability {
+    margin: 0 0 1rem;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
 /* Database: Schema builder - Available Column Types
    TinyORM: Collections - Available Methods
    Supported Compilers
