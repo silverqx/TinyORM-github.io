@@ -168,6 +168,10 @@ const config = {
             to:   '/tinyorm/relationships',
             from: '/tinyorm-relationships',
           },
+          {
+            to:   '/donations',
+            from: '/sponsors',
+          },
         ],
         // createRedirects(existingPath) {
         //   if (existingPath.includes('/community')) {
